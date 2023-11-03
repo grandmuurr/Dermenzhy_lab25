@@ -1,0 +1,346 @@
+{
+  "id": "90bcac9d-480e-42b8-9e9e-a4750106fb82",
+  "version": "2.0",
+  "name": "ONTU",
+  "url": "https://ontu.edu.ua/",
+  "tests": [{
+    "id": "34b95991-28d1-412f-be8d-56e2f9508940",
+    "name": "Click on main logo",
+    "commands": [{
+      "id": "8ab0f7a7-d577-411d-baf5-869c083aa96d",
+      "comment": "Open main page",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "baf2eb77-7c91-4e1d-a956-4c427ddac30a",
+      "comment": "Assert logo is presented",
+      "command": "assertElementPresent",
+      "target": "css=.logo img",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "31de771d-808e-47c2-9885-2f51086a22eb",
+      "comment": "Click on logo to redirect on \"/symbol\" page",
+      "command": "click",
+      "target": "xpath=/html/body/div[2]/div/div[1]/a",
+      "targets": [
+        ["css=.logo img", "css:finder"],
+        ["xpath=//a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "737a8d00-1359-405e-b00b-14f9a8a0d6e5",
+      "comment": "Assert \"Наша символіка\" label is presented",
+      "command": "assertElementPresent",
+      "target": "css=.main_right > .page_h",
+      "targets": [
+        ["css=.main_right > .page_h", "css:finder"],
+        ["xpath=//article/div/div[2]/h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Наша символіка')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "24d45888-7fab-4b0b-89e2-b5d4c214fa39",
+      "comment": "Assert label has text \"Наша символіка\"",
+      "command": "assertText",
+      "target": "css=.main_right > .page_h",
+      "targets": [
+        ["css=.main_right > .page_h", "css:finder"],
+        ["xpath=//article/div/div[2]/h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Наша символіка')]", "xpath:innerText"]
+      ],
+      "value": "Наша символіка"
+    }, {
+      "id": "fb70d637-7420-45ec-a440-1b318ab16525",
+      "comment": "Assert \"ГЕРБ ОДЕСЬКОГО НАЦІОНАЛЬНОГО ТЕХНОЛОГІЧНОГО УНІВЕРСИТЕТУ\" label is presented",
+      "command": "assertElementPresent",
+      "target": "css=.marginC:nth-child(2) > span:nth-child(1)",
+      "targets": [
+        ["css=.marginC:nth-child(2) > span:nth-child(1)", "css:finder"],
+        ["xpath=//p/span", "xpath:position"],
+        ["xpath=//span[contains(.,'ГЕРБ ОДЕСЬКОГО НАЦІОНАЛЬНОГО ТЕХНОЛОГІЧНОГО УНІВЕРСИТЕТУ')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f1470539-6db8-47a3-bc13-641a8f093fc1",
+      "comment": "Assert label has text \"ГЕРБ ОДЕСЬКОГО НАЦІОНАЛЬНОГО ТЕХНОЛОГІЧНОГО УНІВЕРСИТЕТУ\"",
+      "command": "assertText",
+      "target": "css=.marginC:nth-child(2) > span:nth-child(1)",
+      "targets": [],
+      "value": "ГЕРБ ОДЕСЬКОГО НАЦІОНАЛЬНОГО ТЕХНОЛОГІЧНОГО УНІВЕРСИТЕТУ"
+    }, {
+      "id": "28d0b829-efb0-4390-8a6d-c9981c201bc9",
+      "comment": "Assert \"Великий герб\" is presented",
+      "command": "assertElementPresent",
+      "target": "xpath=//img[@alt='Великий герб']",
+      "targets": [
+        ["css=tr:nth-child(1) img", "css:finder"],
+        ["xpath=//img[@alt='Великий герб']", "xpath:img"],
+        ["xpath=//td/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "86f52933-901e-4cf3-8b0c-57ace1a4356b",
+      "comment": "Assert \"Середнiй герб\" is presented",
+      "command": "assertElementPresent",
+      "target": "xpath=//img[@alt='Середнiй герб']",
+      "targets": [
+        ["css=tr:nth-child(3) > td:nth-child(1) > img", "css:finder"],
+        ["xpath=//img[@alt='Середнiй герб']", "xpath:img"],
+        ["xpath=//tr[3]/td/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "63a762d8-5686-420d-a2c7-e82e499b3879",
+      "comment": "Assert \"Малий герб\" is presented",
+      "command": "assertElementPresent",
+      "target": "xpath=//img[@alt='Малий герб']",
+      "targets": [
+        ["css=td:nth-child(2) > img", "css:finder"],
+        ["xpath=//img[@alt='Малий герб']", "xpath:img"],
+        ["xpath=//td[2]/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ac1a4fa1-35e2-47fb-9424-87e9b39fa69b",
+      "comment": "Return on main page",
+      "command": "click",
+      "target": "css=#main_nav > ul > li:nth-child(1) > a",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "f201b140-a483-4795-84a8-868fd4745f66",
+    "name": "Check search",
+    "commands": [{
+      "id": "17dfd9ac-afeb-4474-be19-246ec7cf5495",
+      "comment": "Open main page",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4d3c8c1c-81d3-4b00-b151-4bd05a7c3c2f",
+      "comment": "Assert Search input field is presented",
+      "command": "assertElementPresent",
+      "target": "css=.SearchText",
+      "targets": [
+        ["name=searchtext", "name"],
+        ["css=.SearchText", "css:finder"],
+        ["xpath=//input[@name='searchtext']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "57c45665-23cd-4907-8177-b35e9e081cf4",
+      "comment": "Click on Search input field",
+      "command": "click",
+      "target": "css=.SearchText",
+      "targets": [
+        ["css=li:nth-child(2) > a > img", "css:finder"],
+        ["xpath=//li[2]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "450d7f15-0ee3-4945-b8a9-c5278d10d44c",
+      "comment": "Type \"програмування\"",
+      "command": "type",
+      "target": "css=.SearchText",
+      "targets": [],
+      "value": "програмування"
+    }, {
+      "id": "5ee4ec00-6f98-41af-9d87-6388cf566e56",
+      "comment": "Press Enter key on keyboard",
+      "command": "sendKeys",
+      "target": "css=.SearchText",
+      "targets": [
+        ["name=searchtext", "name"],
+        ["css=.SearchText", "css:finder"],
+        ["xpath=//input[@name='searchtext']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "c334ff10-f808-43ad-881d-06d1814fa780",
+      "comment": "Assert \"Пошук\" label is presented",
+      "command": "assertElementPresent",
+      "target": "css=.main_right > .page_h",
+      "targets": [
+        ["css=.main_right > .page_h", "css:finder"],
+        ["xpath=//article/div/div[2]/h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Пошук')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c0a69d08-9e59-4590-8211-49bbf9508b45",
+      "comment": "Assert label has text \"Пошук\"",
+      "command": "assertText",
+      "target": "css=.main_right > .page_h",
+      "targets": [
+        ["css=.main_right > .page_h", "css:finder"],
+        ["xpath=//article/div/div[2]/h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Пошук')]", "xpath:innerText"]
+      ],
+      "value": "Пошук"
+    }, {
+      "id": "3824abfe-277b-498f-ba3d-5ba88b94afd9",
+      "comment": "Assert \"Результати\" label is presented",
+      "command": "assertElementPresent",
+      "target": "css=.marginC:nth-child(2)",
+      "targets": [
+        ["css=.marginC:nth-child(2)", "css:finder"],
+        ["xpath=//div[2]/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Результати 1 - 10 з приблизно 1990 для програмування')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2fbcae6d-c021-4312-8039-5a3e68dba471",
+      "comment": "Assert \"Home\" button is presented",
+      "command": "assertElementPresent",
+      "target": "css=#main_nav > ul > li:nth-child(1) > a",
+      "targets": [
+        ["css=.main_right > .page_h", "css:finder"],
+        ["xpath=//article/div/div[2]/h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Пошук')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "352bd50c-99d2-4fc7-91e6-70b8ed036cc8",
+      "comment": "Return on main page",
+      "command": "click",
+      "target": "css=#main_nav > ul > li:nth-child(1) > a",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "9962377a-8a69-47f9-8448-16cafb1a2920",
+    "name": "Check contacts on main page",
+    "commands": [{
+      "id": "56e52137-c279-4b5a-acac-f3497b4a905c",
+      "comment": "Open main page",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a374b786-49d6-46cb-8951-47360d58b799",
+      "comment": "Assert \"Приймальна комісія\" is presented",
+      "command": "assertElementPresent",
+      "target": "css=.pk_info",
+      "targets": [
+        ["css=.pk_info", "css:finder"],
+        ["xpath=//div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a88d99c4-090c-479b-8268-1c2795e0d91c",
+      "comment": "Assert \"Telegram чат\" is presented",
+      "command": "assertElementPresent",
+      "target": "css=strong:nth-child(2)",
+      "targets": [
+        ["css=strong:nth-child(2)", "css:finder"],
+        ["xpath=//strong", "xpath:position"],
+        ["xpath=//strong[contains(.,'Telegram чат')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "abda40c1-ff03-42ec-a868-53e65ee4f06c",
+      "comment": "Assert 'КОНТАКТИ' button is presented",
+      "command": "assertElementPresent",
+      "target": "xpath=//a[contains(text(),'КОНТАКТИ')]",
+      "targets": [
+        ["linkText=КОНТАКТИ", "linkText"],
+        ["css=.mains > li:nth-child(9) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'КОНТАКТИ')]", "xpath:link"],
+        ["xpath=//nav[@id='main_nav']/ul/li[9]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/coords')])[2]", "xpath:href"],
+        ["xpath=//nav/ul/li[9]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'КОНТАКТИ')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "67e6d147-e0b3-4360-a006-0d6cf1d02b7f",
+      "comment": "Click on 'КОНТАКТИ' button",
+      "command": "click",
+      "target": "xpath=//a[contains(text(),'КОНТАКТИ')]",
+      "targets": [
+        ["linkText=КОНТАКТИ", "linkText"],
+        ["css=.mains > li:nth-child(9) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'КОНТАКТИ')]", "xpath:link"],
+        ["xpath=//nav[@id='main_nav']/ul/li[9]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/coords')])[2]", "xpath:href"],
+        ["xpath=//nav/ul/li[9]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'КОНТАКТИ')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8ca41603-f715-4f2a-9e32-4e87d3594397",
+      "comment": "Assert \"Наші контакти\" label is presented",
+      "command": "assertElementPresent",
+      "target": "css=.main_right > .page_h",
+      "targets": [
+        ["css=.main_right > .page_h", "css:finder"],
+        ["xpath=//article/div/div[2]/h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Наші контакти')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a8605338-83e8-4732-9dd1-4c1e3cb84b39",
+      "comment": "Assert label has text \"Наші контакти\"",
+      "command": "assertText",
+      "target": "css=.main_right > .page_h",
+      "targets": [
+        ["css=.main_right > .page_h", "css:finder"],
+        ["xpath=//article/div/div[2]/h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Наші контакти')]", "xpath:innerText"]
+      ],
+      "value": "Наші контакти"
+    }, {
+      "id": "d7b9ca78-3eb4-4d82-9ae2-010038b30cfd",
+      "comment": "Assert map image is presented",
+      "command": "assertElementPresent",
+      "target": "css=tr:nth-child(6) img",
+      "targets": [
+        ["css=tr:nth-child(6) img", "css:finder"],
+        ["xpath=//tr[6]/td/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e41176f3-042d-4d2c-a819-cc1d1d10daec",
+      "comment": "Assert \"Наша адреса\" is presented",
+      "command": "assertElementPresent",
+      "target": "css=tr:nth-child(2) > td",
+      "targets": [
+        ["css=tr:nth-child(2) > td", "css:finder"],
+        ["xpath=//tr[2]/td", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0696ab1c-5318-4a64-9040-475403bcb570",
+      "comment": "Assert email",
+      "command": "assertText",
+      "target": "css=.At:nth-child(6)",
+      "targets": [
+        ["linkText=info@ontu.edu.ua", "linkText"],
+        ["css=.At:nth-child(6)", "css:finder"],
+        ["xpath=//a[contains(text(),'info@ontu.edu.ua')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'mailto:info@ontu.edu.ua')]", "xpath:href"],
+        ["xpath=//strong/a", "xpath:position"],
+        ["xpath=//a[contains(.,'info@ontu.edu.ua')]", "xpath:innerText"]
+      ],
+      "value": "info@ontu.edu.ua"
+    }]
+  }],
+  "suites": [{
+    "id": "a1e13bfb-5c62-4dd7-bc8c-87aba6374566",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://ontu.edu.ua/", "https://ontu.edu.ua/symbol", "https://ontu.edu.ua/symbol/", "https://ontu.edu.ua/twtpm"],
+  "plugins": []
+}
